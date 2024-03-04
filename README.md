@@ -15,8 +15,8 @@ the dbSet will be the table, or the model. The query will look something like th
 var existingItem = _fileRepository.Exists(x => x.Label.ToLower() == trimedCellItem[2].ToLower().ToString());
 ````
 
-The business logic, as I understood from the task, processes only the valid rows, so the other rows are jumped. 
-In case we have two cities, one in our database, and the other in our .txt file, we update that city, modifying only the number or the value. To me, it doesn't make sense to have two bars or two records with the same city.
+- The business logic, as I understood from the task, processes only the valid rows, so the other rows are jumped. 
+- In case we have two cities, one in our database, and the other in our .txt file, we update that city, modifying only the number or the value. To me, it doesn't make sense to have two bars or two records with the same city.
 
 ## Installation
 
