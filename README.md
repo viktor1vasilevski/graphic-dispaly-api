@@ -1,6 +1,7 @@
 This is the back-end solution project, implemented with the Clean Architecture pattern as a software architectural design approach. The code design is very clean, utilizing the latest .NET Core 8, and it's an API, making it accessible to multiple users. We have different layers, such as the Domain layer where the models reside, the Application layer where the business logic is implemented, and so on. The unit of work methods are straightforward, and in a real-case scenario they should be more advanced, utilizing delegates to handle operations.
 
-There are so things that I 
+There are some things that I whould do better, like for instance when I check the name for duplicates. I have GetAll and that reads all the data in memory, and then I do filter on the whole data.
+Maybe a better aproach will be to have general method for all repositories that looks like this:
 
 ## Installation
 
