@@ -9,6 +9,11 @@ Maybe a better aproach will be to have general method for all repositories that 
     }
     ```
 
+
+    ```cs
+    Console.WriteLine("Fenced code blocks ftw!");
+    ```
+
 ## Installation
 
 1.  Download the code - Clone the repository or download the zip file
