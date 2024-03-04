@@ -10,9 +10,9 @@ Maybe a better aproach will be to have general method for all repositories that 
     ```
 
 
-    ```cs
-    Console.WriteLine("Fenced code blocks ftw!");
-    ```
+```cs
+Console.WriteLine("Fenced code blocks ftw!");
+```
 
 ## Installation
 
