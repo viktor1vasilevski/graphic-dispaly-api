@@ -82,7 +82,7 @@ namespace Main.Services
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Message = ex.Message;
+                response.Message = $"{FileConstants.FILE_READING_ERROR} : {ex.Message}" ;
             }
 
             return response;

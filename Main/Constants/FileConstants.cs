@@ -10,5 +10,6 @@ namespace Main.Constants
     {
         public const string FILE_LENGTH_IS_MORE_THEN_1 = "File length is more then 1";
         public const string FILE_IS_NOT_TXT_FORMAT = "File is not .txt format";
+        public const string FILE_READING_ERROR = "Error reading the txt file";
     }
 }
