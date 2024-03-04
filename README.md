@@ -10,6 +10,10 @@ Maybe a better aproach will be to have general method for all repositories that 
             return result;
         }
 ```
+the dbSet will be the table, or the model. The query will look something like this: 
+```cs
+        var existingItem = _fileRepository.Exists(x => x.Label.ToLower() == trimedCellItem[2].ToLower().ToString());
+````
 
 ## Installation
 
