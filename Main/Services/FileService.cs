@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -118,15 +119,30 @@ namespace Main.Services
         {
             var trimedCellItem = GetTrimmedCellItems(blockItem);
 
-            if (!String.IsNullOrEmpty(trimedCellItem[0]) && !String.IsNullOrEmpty(trimedCellItem[2]) && trimedCellItem.Count == 3)
+            var existingItem = _fileRepository.GetAll().Where(x => x.Label.ToLower() == trimedCellItem[2].ToLower().ToString()).FirstOrDefault();
+
+            if (existingItem is null)
             {
-                var dto = CreateItemInfoDTO(trimedCellItem);
-
-                if (dto.Success)
+                if (!String.IsNullOrEmpty(trimedCellItem[0]) && !String.IsNullOrEmpty(trimedCellItem[2]) && trimedCellItem.Count == 3)
                 {
-                    var itemInfo = _mapper.Map<ItemInfo>(dto.Data);
+                    var dto = CreateItemInfoDTO(trimedCellItem);
 
-                    _fileRepository.Add(itemInfo);
+                    if (dto.Success)
+                    {
+                        var itemInfo = _mapper.Map<ItemInfo>(dto.Data);
+
+                        _fileRepository.Add(itemInfo);
+                        _fileRepository.SaveChanges();
+                        _successfulProccesses++;
+                    }
+                }
+            } 
+            else
+            {
+                if (int.TryParse(trimedCellItem[1], out int parsedNumber))
+                {
+                    existingItem.Number = parsedNumber;
+                    _fileRepository.Update(existingItem);
                     _fileRepository.SaveChanges();
                     _successfulProccesses++;
                 }
