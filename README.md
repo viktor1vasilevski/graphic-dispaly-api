@@ -15,8 +15,8 @@ There are so things that I
 3.  Go into the Package Manager Console and type: ```Add-Migration "Init```"
     <br />
     <br />
-    ***!IMPORTANT - Make sure that your WebAPI is Set as Startup Project, and in the Package Manager Console your Default project is
-    - this will create folder Migrations in Data with the migration. 
+    ***!IMPORTANT - Make sure that your WebAPI is Set as Startup Project, and in the Package Manager Console your Default project is Data in Infrastructure folder.
+    - this will create folder Migrations in Data class library project, with the migration. 
       
 4.  When this is done, just type in the Package Manager Console: ```Update-Database```
     - this will create the database with you database name and the models.
