@@ -11,7 +11,15 @@ Maybe a better aproach will be to have general method for all repositories that 
 
 
 ```cs
-Console.WriteLine("Fenced code blocks ftw!");
+        public bool Exists(
+             Expression<Func<TEntity, bool>> filter = null)
+        {
+            IQueryable<TEntity> query = dbSet;
+
+            var result = query.Any(filter);
+
+            return result;
+        }
 ```
 
 ## Installation
