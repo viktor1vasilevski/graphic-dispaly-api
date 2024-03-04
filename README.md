@@ -2,6 +2,12 @@ This is the back-end solution project, implemented with the Clean Architecture p
 
 There are some things that I whould do better, like for instance when I check the name for duplicates. I have GetAll and that reads all the data in memory, and then I do filter on the whole data.
 Maybe a better aproach will be to have general method for all repositories that looks like this:
+    ```csharp
+    for (int i = 0 ; i < 10; i++)
+    {
+      // Code to execute.
+    }
+    ```
 
 ## Installation
 
