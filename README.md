@@ -3,16 +3,16 @@ This is the back-end solution project, implemented with the Clean Architecture p
 There are some things that I whould do better, like for instance when I check the name for duplicates. I have GetAll and that reads all the data in memory, and then I do filter on the whole data.
 Maybe a better aproach will be to have general method for all repositories that looks like this:
 ```cs
-        public bool Exists(Expression<Func<TEntity, bool>> filter = null)
-        {
-            IQueryable<TEntity> query = dbSet;
-            var result = query.Any(filter);
-            return result;
-        }
+public bool Exists(Expression<Func<TEntity, bool>> filter = null)
+{
+        IQueryable<TEntity> query = dbSet;
+        var result = query.Any(filter);
+        return result;
+}
 ```
 the dbSet will be the table, or the model. The query will look something like this: 
 ```cs
-        var existingItem = _fileRepository.Exists(x => x.Label.ToLower() == trimedCellItem[2].ToLower().ToString());
+var existingItem = _fileRepository.Exists(x => x.Label.ToLower() == trimedCellItem[2].ToLower().ToString());
 ````
 
 ## Installation
